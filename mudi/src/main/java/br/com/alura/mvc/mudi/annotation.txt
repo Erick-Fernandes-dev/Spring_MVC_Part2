@@ -1,0 +1,7 @@
+@NotBlank - O elemento anotado não deve ser nulo e
+  deve conter pelo menos um caractere sem espaço em
+  branco. Aceita CharSequence
+  
+ 
+ ${} --> representa acessar o atributo do request
+ *{} --> acessar um atributo de um objeto
