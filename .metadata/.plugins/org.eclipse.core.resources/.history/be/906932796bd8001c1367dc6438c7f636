@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+	crossorigin="anonymous">
+</head>
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron mb-0">
+
+			<h1 class="display-4">Novo pedido</h1>
+
+		</div>
+		
+		<div class="card mt-3">
+			<form th:object = "${requisicaoNovoPedido}" class = "card-body" action="/pedido/novo" method="post">
+			
+				<div class="form-group">
+				
+					<label for="nomeProduto">Produto</label>
+					<input th:field = "*{nomeProduto}" class = "form-control" name = "nomeProduto" placeholder="nome do produto">
+					<small>Informa qual o nome do poduto</small>
+					
+				</div>
+				
+				<div class="form-group">
+				
+					<label for="urlProduto">url</label>
+					<input class = "form-control" name = "urlProduto" placeholder="url do produto">
+					<small>Procure me um site o produto que você deseja e cole a url na página aqui. </small>
+					
+				</div>
+				
+				
+				<div class="form-group">
+				
+					<label for="urlImagem">Imagem</label>
+					<input class = "form-control" name = "urlImagem" placeholder="url da imagem">
+					<small>copie a url de uma boa imagem do produto e cole aqui para ajudar a conseguir compradores</small>
+					
+				</div>
+				
+				<div class="form-group">
+				
+					<label for="descriao">Descricao</label>
+					<textarea class = "form-control" name = "descriao" placeholder="Adicione detalhes importantes para ajudar o comprador"></textarea>
+					
+				</div>
+				
+				<button class="btn btn-primary" type="submit">Cadastrar</button>
+			
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

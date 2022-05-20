@@ -20,7 +20,6 @@ public class Pedido {
 	private BigDecimal valorNegociado;
 	private LocalDate dataDaEntrega;
 	
-	@Column(length = 3000, columnDefinition = "TEXT")
 	private String urlProduto;
 	private String urlImagem;
 	private String descricao;
