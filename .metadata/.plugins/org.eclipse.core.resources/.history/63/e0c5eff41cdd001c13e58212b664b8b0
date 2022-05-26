@@ -1,0 +1,2 @@
+NotBlank.requisicaoNovoPedido.nomeProduto= O campo nome do produto é obrigatório
+java.util.PropertyResourceBundle.encoding=ISO-8859-1

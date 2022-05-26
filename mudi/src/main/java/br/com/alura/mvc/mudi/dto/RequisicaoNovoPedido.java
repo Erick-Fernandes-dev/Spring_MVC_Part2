@@ -6,7 +6,7 @@ import br.com.alura.mvc.mudi.model.Pedido;
 
 public class RequisicaoNovoPedido {
 	
-	@NotBlank
+	@NotBlank//NotBlank.requisicaoNovoPedido.nomeProduto=não pode estar em branco
 	private String nomeProduto;
 	
 	@NotBlank
@@ -14,7 +14,7 @@ public class RequisicaoNovoPedido {
 	
 	@NotBlank
 	private String urlImagem;
-	private String descriao;
+	private String descricao;
 	
 	public String getNomeProduto() {
 		return nomeProduto;
@@ -34,11 +34,12 @@ public class RequisicaoNovoPedido {
 	public void setUrlImagem(String urlImagem) {
 		this.urlImagem = urlImagem;
 	}
-	public String getDescriao() {
-		return descriao;
+
+	public String getDescricao() {
+		return descricao;
 	}
-	public void setDescriao(String descriao) {
-		this.descriao = descriao;
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	public Pedido toPedido() {
 		Pedido pedido = new Pedido();
@@ -46,7 +47,7 @@ public class RequisicaoNovoPedido {
 		pedido.setNomeProduto(nomeProduto);
 		pedido.setUrlProduto(urlProduto);
 		pedido.setUrlImagem(urlImagem);
-		pedido.setDescricao(descriao);
+		pedido.setDescricao(descricao);
 		
 		return pedido;
 	}
