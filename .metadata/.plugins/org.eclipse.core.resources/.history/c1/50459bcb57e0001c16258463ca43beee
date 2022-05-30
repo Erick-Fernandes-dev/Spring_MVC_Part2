@@ -9,17 +9,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.algnologia.mvc.mudi.model.Pedido;
-import br.com.algnologia.mvc.mudi.model.StatusPedido;
 import br.com.algnologia.mvc.mudi.repository.PedidoRepository;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping(value = "/home")
 public class HomeController {
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
-	@GetMapping()
+	@GetMapping("/home")
 	public String home(Model model) {
 		
 //		List<Pedido> pedidos = repository.recuperaTodosOsPedidos();
@@ -38,14 +37,4 @@ public class HomeController {
 		return "home";
 	}
 
-	@GetMapping("/aguardando")
-	public String aguardando(Model model) {
-		
-		List<Pedido> pedidos = this.pedidoRepository.findByStatus(StatusPedido.AGUARDANDO);
-		
-		model.addAttribute("pedidos", pedidos);
-		
-		return "home";
-	}
-	
 }
