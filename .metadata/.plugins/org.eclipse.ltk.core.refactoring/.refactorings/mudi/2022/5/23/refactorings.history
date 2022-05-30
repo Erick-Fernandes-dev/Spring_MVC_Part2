@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;br.com.alura.mvc.mudi&apos; to &apos;br.com.algnologia.mvc.mudi&apos;&#x0D;&#x0A;- Original project: &apos;mudi&apos;&#x0D;&#x0A;- Original element: &apos;mudi/src/main/java/br.com.alura.mvc.mudi&apos;&#x0D;&#x0A;- Renamed element: &apos;mudi/src/main/java/br.com.algnologia.mvc.mudi&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings&#x0D;&#x0A;- Rename subpackages of the package" description="Rename package &apos;br.com.alura.mvc.mudi&apos;" flags="589830" hierarchical="true" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;br.com.alura.mvc.mudi" name="br.com.algnologia.mvc.mudi" qualified="false" references="true" stamp="1653921668032" textual="false" version="1.0"/>
+</session>
