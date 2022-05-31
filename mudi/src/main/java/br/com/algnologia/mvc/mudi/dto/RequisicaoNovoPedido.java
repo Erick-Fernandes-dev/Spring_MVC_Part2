@@ -1,5 +1,6 @@
 package br.com.algnologia.mvc.mudi.dto;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotBlank;
 
 import br.com.algnologia.mvc.mudi.model.Pedido;
@@ -15,6 +16,8 @@ public class RequisicaoNovoPedido {
 	
 	@NotBlank
 	private String urlImagem;
+	
+	@Column(columnDefinition = "text")
 	private String descricao;
 	
 	public String getNomeProduto() {

@@ -11,6 +11,7 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
 		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
 	<style>
 	.logo-container {
 		background-color: #47bcff;
@@ -24,12 +25,26 @@
 	
 	}
 	
+	.myBackground {
+     background-image: url(https://images.unsplash.com/photo-1571646305816-f155cec7e16e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+     color: white
+	}
+	
+	
+	.corTexto {
+		background: url(https://images.unsplash.com/photo-1592435284091-0faebb4beba1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80) no-repeat  center center / cover;
+		font-family: 'Teko', sans-serif;
+		color: #000;
+	
+	}
+	
+	
 	</style>	
 	
 </head>
 
 
-<div th:fragment="logo" class="logo-container mb-3 p-3 d-flex justify-content-between">
+<div th:fragment="logo" class="logo-container mb-3 p-3 d-flex justify-content-between ">
 
 		<span class="logo">mudi</span> 
 		<span class="mt-3">login</span>
@@ -37,8 +52,8 @@
 </div>
 
 
-<div th:fragment="titulo(valor)" class="jumbotron mb-0">
+<div th:fragment="titulo(valor)" class="jumbotron mb-0 corTexto">
 
-	<h1 class="display-4" th:text="${valor}">Novo pedido</h1>
+	<h1 class="display-4"  th:text="${valor} ">Novo pedido</h1>
 
 </div>

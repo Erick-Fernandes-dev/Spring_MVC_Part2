@@ -1,0 +1,59 @@
+<head th:fragment="head">
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet"
+		href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+		crossorigin="anonymous">
+		
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Handlee&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Teko&display=swap" rel="stylesheet">
+	<style>
+	.logo-container {
+		background-color: #47bcff;
+		color: #fff;
+	}
+	
+	.logo {
+	
+		font-family: 'Handlee', cursive;
+		font-size: 2.5rem;
+	
+	}
+	
+	.myBackground {
+     background-image: url(https://images.unsplash.com/photo-1571646305816-f155cec7e16e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80);
+     color: white
+	}
+	
+	
+	.corTexto {
+		background-image: url(https://images.unsplash.com/photo-1592435284091-0faebb4beba1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80) no-repeat;
+		font-family: 'Teko', sans-serif;
+		color: #000;
+	
+	}
+	
+	
+	</style>	
+	
+</head>
+
+
+<div th:fragment="logo" class="logo-container mb-3 p-3 d-flex justify-content-between ">
+
+		<span class="logo">mudi</span> 
+		<span class="mt-3">login</span>
+
+</div>
+
+
+<div th:fragment="titulo(valor)" class="jumbotron mb-0 corTexto">
+
+	<h1 class="display-4"  th:text="${valor} ">Novo pedido</h1>
+
+</div>

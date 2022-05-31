@@ -5,7 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.com.algnologia.mvc.mudi.model.Pedido;
@@ -19,7 +21,7 @@ public class HomeController {
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
-	@GetMapping()
+	@GetMapping()//busca todos os produtos
 	public String home(Model model) {
 		
 //		List<Pedido> pedidos = repository.recuperaTodosOsPedidos();
@@ -34,18 +36,22 @@ public class HomeController {
 //		
 //		List<Pedido> pedidos = Arrays.asList(pedido);
 		model.addAttribute("pedidos", pedidos);
-		
 		return "home";
 	}
 
-	@GetMapping("/aguardando")
-	public String aguardando(Model model) {
+	@GetMapping("/{status}")// busca pelos status
+	public String porStatus(@PathVariable("status") String status, Model model) {
 		
-		List<Pedido> pedidos = this.pedidoRepository.findByStatus(StatusPedido.AGUARDANDO);
+		List<Pedido> pedidos = this.pedidoRepository.findByStatus(StatusPedido.valueOf(status.toUpperCase()));
 		
 		model.addAttribute("pedidos", pedidos);
 		
 		return "home";
+	}
+	
+	@ExceptionHandler(IllegalArgumentException.class)
+	public String onError() {
+		return "redirect:/home";
 	}
 	
 }
