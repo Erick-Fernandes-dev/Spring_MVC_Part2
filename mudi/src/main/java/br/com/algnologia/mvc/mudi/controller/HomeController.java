@@ -15,13 +15,20 @@ import br.com.algnologia.mvc.mudi.model.StatusPedido;
 import br.com.algnologia.mvc.mudi.repository.PedidoRepository;
 
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 public class HomeController {
 	
 	@Autowired
 	private PedidoRepository pedidoRepository;
 	
-	@GetMapping()//busca todos os produtos
+	@GetMapping()
+	public String itial(Model model) {
+		
+		return "home";
+		
+	}
+	
+	@GetMapping("/home")//busca todos os produtos
 	public String home(Model model) {
 		
 //		List<Pedido> pedidos = repository.recuperaTodosOsPedidos();
@@ -38,8 +45,10 @@ public class HomeController {
 		model.addAttribute("pedidos", pedidos);
 		return "home";
 	}
+	
+	
 
-	@GetMapping("/{status}")// busca pelos status
+	@GetMapping("/home/{status}")// busca pelos status
 	public String porStatus(@PathVariable("status") String status, Model model) {
 		
 		List<Pedido> pedidos = this.pedidoRepository.findByStatus(StatusPedido.valueOf(status.toUpperCase()));
