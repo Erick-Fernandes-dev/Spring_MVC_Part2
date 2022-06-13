@@ -5,3 +5,8 @@
  
  ${} --> representa acessar o atributo do request
  *{} --> acessar um atributo de um objeto
+ 
+ BcryptPasswordEncoder
+ 
+ 
+ Interface Principal --> A gente consegue os dados de usuarios com essa interface

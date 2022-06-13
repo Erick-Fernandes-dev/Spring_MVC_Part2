@@ -1,5 +1,6 @@
 package br.com.algnologia.mvc.mudi.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,10 @@ public class HomeController {
 	}
 	
 	@GetMapping("/home")//busca todos os produtos
-	public String home(Model model) {
+	public String home(Model model, Principal principal) {
 		
 //		List<Pedido> pedidos = repository.recuperaTodosOsPedidos();
-		List<Pedido> pedidos = pedidoRepository.findAll();
+		List<Pedido> pedidos = pedidoRepository.findAllByUsuario(principal.getName());
 //		
 	
 //		Pedido pedido = new Pedido();
