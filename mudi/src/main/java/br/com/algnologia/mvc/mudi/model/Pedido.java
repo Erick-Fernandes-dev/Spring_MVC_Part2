@@ -27,7 +27,7 @@ public class Pedido {
 	private String urlProduto;
 	private String urlImagem;
 	
-	@Column(columnDefinition = "text")
+	
 	private String descricao;
 	
 	@Enumerated(EnumType.STRING)

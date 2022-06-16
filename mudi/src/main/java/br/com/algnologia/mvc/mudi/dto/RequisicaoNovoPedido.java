@@ -17,7 +17,7 @@ public class RequisicaoNovoPedido {
 	@NotBlank
 	private String urlImagem;
 	
-	@Column(columnDefinition = "text")
+	
 	private String descricao;
 	
 	public String getNomeProduto() {
