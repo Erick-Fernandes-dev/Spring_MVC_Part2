@@ -20,38 +20,33 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	// configuração de autorização
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		
-		http.authorizeRequests()
-			.anyRequest()
-			.authenticated()
+		http
+		.authorizeRequests()
+			.anyRequest().authenticated()
 		.and()
-			.formLogin(form -> form
-			.loginPage("/login")
-			.defaultSuccessUrl("/home", true)
-			.permitAll()
-		)
+		.formLogin(form -> form
+            .loginPage("/login")
+            .defaultSuccessUrl("/home", true)
+            .permitAll()
+        )
 		.logout(logout -> logout.logoutUrl("/logout"));
 	}
 
 	// Utilizando o JDBC authentication para poder autenticar o usuário
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
-//		UserDetails user = User
-//				.builder()
-//				.username("maria")
-//				.password(encoder.encode("maria"))
-//				.roles("ADM")
-//				.build();
-
-		
 		auth
-		.jdbcAuthentication()
-		.dataSource(dataSource)
-		.passwordEncoder(encoder);
-//		.withUser(user)
+			.jdbcAuthentication()
+			.dataSource(dataSource)
+			.passwordEncoder(encoder);
+		
+//		UserDetails user =
+//				 User.builder()
+//					.username("maria")
+//					.password(encoder.encode("maria"))
+//					.roles("ADM")
+//					.build();
 	}
 
 	// autenticando usuario
